@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zulfikar7 Info | Zulfikar Ali</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2457d6;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #172033;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #2457d6;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px 50px;
+      background: linear-gradient(135deg, #eaf0ff, #ffffff);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      margin-bottom: 15px;
+      color: #172033;
+    }
+
+    .hero h1 span {
+      color: #2457d6;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #596579;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      margin: 5px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #2457d6;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(36,87,214,0.3);
+    }
+
+    .btn-light {
+      background: white;
+      color: #2457d6;
+      border: 2px solid #2457d6;
+    }
+
+    /* Sections */
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 45px;
+    }
+
+    /* Info Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #2457d6;
+    }
+
+    .card p {
+      color: #596579;
+    }
+
+    /* About */
+    .about {
+      background: white;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box p {
+      font-size: 18px;
+      color: #596579;
+    }
+
+    /* Contact */
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    /* Footer */
+    footer {
+      background: #172033;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer span {
+      color: #6f95ff;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        gap: 10px;
+      }
+
+      nav ul li:nth-child(n+3) {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Zulfikar7 Info</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#info">Info</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hello, I'm <span>Zulfikar Ali</span></h1>
+
+      <p>
+        Welcome to my professional personal website —
+        <strong>Zulfikar7 Info</strong>.
+      </p>
+
+      <a href="#about" class="btn">Discover More</a>
+      <a href="#contact" class="btn btn-light">Contact</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-box">
+      <h2 class="section-title">About Me</h2>
+
+      <p>
+        Welcome to Zulfikar7 Info. This website provides
+        information about me, my school, and my educational details.
+      </p>
+    </div>
+  </section>
+
+  <!-- Information -->
+  <section id="info">
+    <h2 class="section-title">My Information</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>👤 Name</h3>
+        <p>Zulfikar Ali</p>
+      </div>
+
+      <div class="card">
+        <h3>🎓 Roll Number</h3>
+        <p>20</p>
+      </div>
+
+      <div class="card">
+        <h3>🏫 School</h3>
+        <p>Madinatul Ilm, Dholka</p>
+      </div>
+
+      <div class="card">
+        <h3>📍 Venue</h3>
+        <p>Madinatul Ilm School, Dholka</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-box">
+      <h2 class="section-title">Contact</h2>
+
+      <p>
+        Thank you for visiting <strong>Zulfikar7 Info</strong>.
+      </p>
+
+      <br>
+
+      <a href="#home" class="btn">Back to Home</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 <span>Zulfikar7 Info</span> · Zulfikar Ali
+  </footer>
+
+</body>
+</html>
