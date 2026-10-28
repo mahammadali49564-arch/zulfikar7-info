@@ -1,199 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zulfikar7 Info</title>
-
-<style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #001f6b, #087cf0, #00c6ff);
-    color: white;
-    text-align: center;
-}
-
-header {
-    padding: 30px 15px;
-    background: rgba(0, 0, 50, 0.45);
-}
-
-.logo {
-    width: 85px;
-    height: 85px;
-    margin: auto;
-    border: 3px solid white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    background: #003399;
-}
-
-h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-}
-
-section {
-    background: rgba(255,255,255,0.13);
-    margin: 20px auto;
-    padding: 25px 18px;
-    border-radius: 18px;
-    width: 90%;
-    max-width: 650px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.info {
-    font-size: 18px;
-    line-height: 2;
-}
-
-button {
-    background: white;
-    color: #0047ab;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 20px;
-    margin: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #bde8ff;
-}
-
-#result, #gameResult {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-footer {
-    background: rgba(0,0,30,0.4);
-    padding: 20px;
-    margin-top: 30px;
-}
-
-a {
-    color: white;
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 26px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zulfikar7 Info - personal website, education, hobbies, quizzes and mini games.">
+  <title>Zulfikar7 Info</title>
+  <style>
+    :root {
+      --navy: #071b49;
+      --blue: #0b55c7;
+      --bright: #36b5ff;
+      --pale: #eaf4ff;
+      --white: #ffffff;
+      --ink: #12213a;
+      --muted: #52647d;
+      --green: #0b9b70;
     }
-
-    section {
-        width: 92%;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, #061b49 0%, #0b55c7 52%, #24a9ee 100%);
+      min-height: 100vh;
     }
-}
-</style>
+    a { color: inherit; }
+    .site-wrap { width: min(1100px, 94%); margin: 0 auto; }
+    header {
+      color: white;
+      padding: 22px 0 14px;
+    }
+    .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: grid; place-items: center; background: white; color: var(--blue);
+      font-size: 23px; font-weight: 900; box-shadow: 0 8px 24px #00143a55;
+    }
+    .brand h1 { margin: 0; font-size: clamp(24px, 5vw, 34px); letter-spacing: .3px; }
+    .brand p { margin: 4px 0 0; color: #d8edff; font-size: 13px; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 4px; }
+    nav a {
+      text-decoration: none; color: white; font-size: 14px; font-weight: 700;
+      padding: 9px 13px; border-radius: 999px; background: #ffffff18;
+      border: 1px solid #ffffff35;
+    }
+    nav a:hover { background: white; color: var(--blue); }
+    .hero {
+      display: grid; grid-template-columns: 1.35fr .65fr; gap: 22px; align-items: stretch;
+      padding: 26px 0 30px; color: white;
+    }
+    .hero-copy, .hero-card {
+      border: 1px solid #ffffff3d; border-radius: 26px;
+      background: #ffffff12; backdrop-filter: blur(6px); padding: clamp(22px, 5vw, 38px);
+      box-shadow: 0 18px 40px #00143a26;
+    }
+    .tag { display: inline-block; border-radius: 999px; padding: 7px 12px; background: #ffffff22; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+    .hero h2 { font-size: clamp(30px, 6vw, 54px); line-height: 1.08; margin: 17px 0 12px; }
+    .hero p { color: #e2f3ff; line-height: 1.7; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn { border: 0; cursor: pointer; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; display: inline-block; }
+    .btn-light { background: white; color: var(--blue); }
+    .btn-glass { color: white; background: #ffffff20; border: 1px solid #ffffff50; }
+    .hero-card { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .avatar {
+      width: 116px; height: 116px; border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(145deg, white, #b8e6ff); color: var(--blue);
+      font-size: 44px; font-weight: 900; border: 5px solid #ffffff66;
+      box-shadow: 0 10px 35px #00143a55;
+    }
+    .hero-card h3 { margin: 17px 0 5px; font-size: 23px; }
+    .hero-card p { margin: 5px 0; font-size: 14px; }
+    main { padding-bottom: 35px; }
+    section.panel {
+      background: white; border-radius: 22px; margin: 18px 0; padding: clamp(20px, 4vw, 30px);
+      box-shadow: 0 14px 34px #00143a25; scroll-margin-top: 12px;
+    }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+    .section-head h2 { margin: 0; font-size: clamp(23px, 4vw, 31px); color: var(--navy); }
+    .section-head p { margin: 7px 0 0; color: var(--muted); line-height: 1.5; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .card { border: 1px solid #dce9f8; background: #f8fbff; border-radius: 17px; padding: 18px; }
+    .card .icon { font-size: 27px; }
+    .card h3 { margin: 9px 0 7px; color: var(--navy); }
+    .card p { color: var(--muted); line-height: 1.6; margin: 0; }
+    .details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .detail { padding: 14px; border-radius: 13px; background: var(--pale); }
+    .detail strong { display: block; color: var(--blue); font-size: 12px; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 6px; }
+    .detail span { font-weight: 700; overflow-wrap: anywhere; }
+    .game-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .game { border: 1px solid #dce9f8; border-radius: 18px; padding: 18px; background: #f8fbff; min-width: 0; }
+    .game h3 { margin: 0 0 8px; color: var(--navy); }
+    .game p { color: var(--muted); line-height: 1.5; }
+    button, input, select { font: inherit; }
+    .control { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    .control input { width: min(100%, 190px); border: 1px solid #cbd8e8; border-radius: 10px; padding: 10px 12px; }
+    .btn-blue { color: white; background: var(--blue); }
+    .btn-outline { color: var(--blue); background: white; border: 1px solid #b8cde8; }
+    .status { min-height: 24px; font-weight: 700; margin-top: 12px; color: var(--blue); }
+    .ttt-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; width: min(100%, 270px); margin-top: 12px; }
+    .ttt-cell { aspect-ratio: 1; border: 1px solid #bcd2ef; border-radius: 12px; background: white; color: var(--blue); font-size: clamp(26px, 6vw, 38px); font-weight: 900; cursor: pointer; }
+    .rps-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rps-buttons button { min-width: 82px; }
+    .quiz-option { width: 100%; text-align: left; margin: 5px 0; border: 1px solid #cbd8e8; background: white; padding: 11px; border-radius: 10px; cursor: pointer; }
+    .quiz-option:hover { border-color: var(--blue); background: var(--pale); }
+    .footer { color: #e4f4ff; text-align: center; padding: 18px 10px 28px; font-size: 13px; line-height: 1.7; }
+    .small-note { color: var(--muted); font-size: 13px; }
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .game-grid { grid-template-columns: 1fr; }
+      .details { grid-template-columns: 1fr; }
+      nav a { font-size: 13px; padding: 8px 10px; }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <div class="logo">Z7</div>
-    <h1>Welcome to Zulfikar7 Info</h1>
-    <p>My Personal Website</p>
-</header>
-
-<section>
-    <h2>👨‍🎓 About Me</h2>
-    <div class="info">
-        <p><strong>Name:</strong> Zulfikar Ali</p>
-        <p><strong>Class:</strong> Standard 8</p>
-        <p><strong>Roll Number:</strong> 20</p>
-        <p><strong>School:</strong> Madinatul Ilm, Dholka</p>
-        <p><strong>Venue:</strong> School venue</p>
+  <header class="site-wrap">
+    <div class="brand-row">
+      <div class="brand">
+        <div class="logo">Z7</div>
+        <div>
+          <h1>Zulfikar7 Info</h1>
+          <p>A little website about me, learning and fun</p>
+        </div>
+      </div>
     </div>
-</section>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#games">Games</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section>
-    <h2>✨ About My Website</h2>
-    <p>
-        Welcome to Zulfikar7 Info! This is my personal website.
-        Explore the quiz and play the mini game below.
-    </p>
-</section>
+  <div class="site-wrap">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="tag">WELCOME TO MY WEBSITE</span>
+        <h2>Explore.<br>Learn. Play.</h2>
+        <p>Welcome to Zulfikar7 Info — my personal corner of the internet, with information about me, my education, my hobbies, and some fun mini-games.</p>
+        <div class="buttons">
+          <a class="btn btn-light" href="#about">Explore Website ↓</a>
+          <a class="btn btn-glass" href="#games">Play a Game 🎮</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="avatar" aria-label="Z7 initials">Z7</div>
+        <h3>Zulfikar</h3>
+        <p>Student • Learner • Explorer</p>
+        <p>✨ Keep learning, keep growing!</p>
+      </div>
+    </section>
 
-<section>
-    <h2>🧠 General Knowledge Quiz</h2>
-    <p>What is the capital of India?</p>
+    <main>
+      <section class="panel" id="about">
+        <div class="section-head">
+          <div><h2>👋 About Me</h2><p>A quick introduction.</p></div>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="icon">🌟</div><h3>Who I Am</h3><p>I'm a student who enjoys learning new things and exploring technology.</p></article>
+          <article class="card"><div class="icon">💡</div><h3>My Goal</h3><p>To learn useful skills, improve every day, and build creative projects.</p></article>
+          <article class="card"><div class="icon">🌐</div><h3>My Website</h3><p>This is my own website, made with HTML, CSS, and JavaScript.</p></article>
+        </div>
+      </section>
 
-    <button onclick="checkAnswer('Mumbai')">Mumbai</button>
-    <button onclick="checkAnswer('New Delhi')">New Delhi</button>
-    <button onclick="checkAnswer('Chennai')">Chennai</button>
+      <section class="panel" id="education">
+        <div class="section-head"><div><h2>🎓 Education</h2><p>My school information.</p></div></div>
+        <div class="details">
+          <div class="detail"><strong>Class / Standard</strong><span>Standard 8</span></div>
+          <div class="detail"><strong>Roll Number</strong><span>20</span></div>
+          <div class="detail"><strong>School</strong><span>Madinatul Ilm, Dholka</span></div>
+          <div class="detail"><strong>Venue</strong><span>School venue</span></div>
+        </div>
+        <p class="small-note">You can edit these details in the HTML if they change.</p>
+      </section>
 
-    <p id="result"></p>
-</section>
+      <section class="panel" id="hobbies">
+        <div class="section-head"><div><h2>🎯 My Hobbies</h2><p>Things I enjoy and skills I want to explore.</p></div></div>
+        <div class="grid">
+          <article class="card"><div class="icon">💻</div><h3>Technology</h3><p>Exploring websites, apps, and new technology.</p></article>
+          <article class="card"><div class="icon">🎮</div><h3>Gaming</h3><p>Playing games and learning how they work.</p></article>
+          <article class="card"><div class="icon">📚</div><h3>Learning</h3><p>Discovering new ideas and improving my knowledge.</p></article>
+        </div>
+      </section>
 
-<section>
-    <h2>🎮 Guess the Number</h2>
-    <p>Guess a number between 1 and 5!</p>
+      <section class="panel" id="games">
+        <div class="section-head"><div><h2>🎮 Fun Zone — Mini Games</h2><p>Play these games right on the website. No downloads needed.</p></div></div>
+        <div class="game-grid">
+          <article class="game">
+            <h3>⭕ Tic-Tac-Toe</h3><p>You are X. The computer is O. Try to get three in a row.</p>
+            <div class="ttt-board" id="tttBoard" aria-label="Tic Tac Toe board"></div>
+            <div class="status" id="tttStatus" aria-live="polite">Your turn — choose a square.</div>
+            <button class="btn btn-blue" id="tttReset">Restart Game</button>
+          </article>
+          <article class="game">
+            <h3>✊ Rock Paper Scissors</h3><p>Choose rock, paper, or scissors to play against the computer.</p>
+            <div class="rps-buttons">
+              <button class="btn btn-outline" data-rps="rock">✊ Rock</button>
+              <button class="btn btn-outline" data-rps="paper">✋ Paper</button>
+              <button class="btn btn-outline" data-rps="scissors">✌️ Scissors</button>
+            </div>
+            <div class="status" id="rpsStatus" aria-live="polite">Make your choice!</div>
+            <button class="btn btn-blue" id="rpsReset">Reset Score</button>
+          </article>
+          <article class="game">
+            <h3>🔢 Number Guessing</h3><p>I'm thinking of a number from 1 to 20. Can you guess it?</p>
+            <form id="guessForm" class="control">
+              <input id="guessInput" type="number" min="1" max="20" placeholder="Enter 1–20" required>
+              <button class="btn btn-blue" type="submit">Guess</button>
+            </form>
+            <div class="status" id="guessStatus" aria-live="polite">You have 5 tries.</div>
+            <button class="btn btn-outline" id="guessReset">New Number</button>
+          </article>
+          <article class="game" id="quiz">
+            <h3>🧠 Quick Quiz</h3><p id="quizQuestion">Loading question…</p>
+            <div id="quizOptions"></div>
+            <div class="status" id="quizStatus" aria-live="polite"></div>
+            <button class="btn btn-blue" id="quizNext">Next Question</button>
+          </article>
+        </div>
+      </section>
 
-    <button onclick="playGame(1)">1</button>
-    <button onclick="playGame(2)">2</button>
-    <button onclick="playGame(3)">3</button>
-    <button onclick="playGame(4)">4</button>
-    <button onclick="playGame(5)">5</button>
+      <section class="panel" id="contact">
+        <div class="section-head"><div><h2>📬 Contact</h2><p>Keep in touch safely.</p></div></div>
+        <div class="card">
+          <h3>Thanks for visiting!</h3>
+          <p>This is a personal demo website. If you want to add contact details, only publish information you are comfortable sharing publicly. Avoid posting your home address or private phone number.</p>
+        </div>
+      </section>
+    </main>
+  </div>
 
-    <p id="gameResult"></p>
-    <button onclick="resetGame()">Play Again</button>
-</section>
+  <footer class="footer">
+    <div>© <span id="year"></span> Zulfikar7 Info</div>
+    <div>Made with HTML, CSS and JavaScript 💙</div>
+  </footer>
 
-<section>
-    <h2>🌟 Thank You!</h2>
-    <p>Thank you for visiting Zulfikar7 Info.</p>
-    <p>Keep learning and keep growing!</p>
-</section>
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<footer>
-    <p>© 2026 Zulfikar7 Info</p>
-    <p>Created by Zulfikar Ali 💙</p>
-</footer>
-
-<script>
-function checkAnswer(answer) {
-    const result = document.getElementById("result");
-
-    if (answer === "New Delhi") {
-        result.textContent = "🎉 Correct! New Delhi is the capital of India.";
-    } else {
-        result.textContent = "❌ Try again!";
+    // Tic-Tac-Toe
+    const tttBoard = document.getElementById("tttBoard");
+    const tttStatus = document.getElementById("tttStatus");
+    let tttCells = Array(9).fill("");
+    let tttOver = false;
+    const winLines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    function tttWinner(board) {
+      for (const line of winLines) {
+        const [a,b,c] = line;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a];
+      }
+      return "";
     }
-}
-
-let secretNumber = Math.floor(Math.random() * 5) + 1;
-
-function playGame(number) {
-    const result = document.getElementById("gameResult");
-
-    if (number === secretNumber) {
-        result.textContent = "🎉 Excellent! You guessed correctly!";
-    } else {
-        result.textContent = "❌ Not this time! Try another number.";
+    function renderTtt() {
+      tttBoard.innerHTML = "";
+      tttCells.forEach((value, index) => {
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "ttt-cell";
+        cell.textContent = value;
+        cell.setAttribute("aria-label", "Square " + (index + 1) + (value ? ", " + value : ""));
+        cell.disabled = Boolean(value) || tttOver;
+        cell.addEventListener("click", () => playTtt(index));
+        tttBoard.appendChild(cell);
+      });
     }
-}
+    function finishTtt(message) { tttOver = true; tttStatus.textContent = message; renderTtt(); }
+    function playTtt(index) {
+      if (tttOver || tttCells[index]) return;
+      tttCells[index] = "X";
+      if (tttWinner(tttCells) === "X") { finishTtt("You win! 🎉"); return; }
+      if (tttCells.every(Boolean)) { finishTtt("It's a draw!"); return; }
+      const empty = tttCells.map((v,i) => v ? -1 : i).filter(i => i >= 0);
+      let move = empty.find(i => { const b = [...tttCells]; b[i] = "O"; return tttWinner(b) === "O"; });
+      if (move === undefined) move = empty.find(i => { const b = [...tttCells]; b[i] = "X"; return tttWinner(b) === "X"; });
+      if (move === undefined && !tttCells[4]) move = 4;
+      if (move === undefined) move = empty.find(i => [0,2,6,8].includes(i));
+      if (move === undefined) move = empty[Math.floor(Math.random() * empty.length)];
+      if (move !== undefined) tttCells[move] = "O";
+      if (tttWinner(tttCells) === "O") { finishTtt("Computer wins. Try again!"); return; }
+      if (tttCells.every(Boolean)) { finishTtt("It's a draw!"); return; }
+      tttStatus.textContent = "Your turn — choose a square.";
+      renderTtt();
+    }
+    function resetTtt() { tttCells = Array(9).fill(""); tttOver = false; tttStatus.textContent = "Your turn — choose a square."; renderTtt(); }
+    document.getElementById("tttReset").addEventListener("click", resetTtt);
+    resetTtt();
 
-function resetGame() {
-    secretNumber = Math.floor(Math.random() * 5) + 1;
-    document.getElementById("gameResult").textContent =
-        "A new number is ready. Guess again!";
-}
-</script>
+    // Rock Paper Scissors
+    let rpsWins = 0, rpsLosses = 0, rpsDraws = 0;
+    document.querySelectorAll("[data-rps]").forEach(button => {
+      button.addEventListener("click", () => {
+        const you = button.dataset.rps;
+        const choices = ["rock", "paper", "scissors"];
+        const computer = choices[Math.floor(Math.random() * choices.length)];
+        let result;
+        if (you === computer) { result = "Draw!"; rpsDraws++; }
+        else if ((you === "rock" && computer === "scissors") || (you === "paper" && computer === "rock") || (you === "scissors" && computer === "paper")) { result = "You win! 🎉"; rpsWins++; }
+        else { result = "Computer wins this round."; rpsLosses++; }
+        document.getElementById("rpsStatus").textContent = `You: ${you} | Computer: ${computer}. ${result} Score — Wins: ${rpsWins}, Losses: ${rpsLosses}, Draws: ${rpsDraws}.`;
+      });
+    });
+    document.getElementById("rpsReset").addEventListener("click", () => {
+      rpsWins = 0; rpsLosses = 0; rpsDraws = 0;
+      document.getElementById("rpsStatus").textContent = "Score reset. Make your choice!";
+    });
 
-</body>
-</html>
+    // Number guessing
+    let secretNumber, guessesLeft;
+    function resetGuess() {
+      secretNumber = Math.floor(Math.random() * 20) + 1;
+      guessesLeft = 5;
+      document.getElementById("guessInput").value = "";
+      document.getElementById("guessInput").disabled = false;
+      document.querySelector('#guessForm button[type="submit"]').disabled = false;
+      document.getElementById("guessStatus").textContent = "You have 5 tries.";
+    }
+    document.getElementById("guessForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const input = document.getElementById("guessInput");
+      const guess = Number(input.value);
+      if (!Number.isInteger(guess) || guess < 1 || guess > 20) {
+        document.getElementById("guessStatus").textContent = "Enter a whole number from 1 to 20.";
+        return;
+      }
+      guessesLeft--;
+      if (guess === secretNumber) {
+        document.getElementById("guessStatus").textContent = `Correct! 🎉 The number was ${secretNumber}.`;
+        input.disabled = true;
+        document.querySelector('#guessForm button[type="submit"]').disabled = true;
+      } else if (guessesLeft === 0) {
+        document.getElementById("guessStatus").textContent = `No tries left. The number was ${secretNumber}. Tap New Number to play again.`;
+        input.disabled = true;
+        document.querySelector('#guessForm button[type="submit"]').disabled = true;
+      } else {
+        document.getElementById("guessStatus").textContent = `${guess < secretNumber ? "Too low!" : "Too high!"} ${guessesLeft} tries left.`;
+        input.value = "";
+        input.focus();
+      }
+    });
+    document.getElementById("guessReset").addEventListener("click", resetGuess);
+    resetGuess();
 
+    // Quick quiz
+    const quizQuestions = [
+      { q: "Which language gives a web page its basic structure?", options: ["HTML", "CSS", "JavaScript"], answer: 0, info: "HTML provides the structure of a web page." },
+      { q: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter"], answer: 1, info: "Mars is often called the Red Planet." },
+      { q: "What is 8 × 7?", options: ["54", "56", "64"], answer: 1, info: "8 multiplied by 7 equals 56." },
+      { q: "Which part styles colours and layout on a website?", options: ["CSS", "HTML", "A browser tab"], answer: 0, info: "CSS controls the visual styling of a page." },
+      { q: "How many sides does a triangle have?", options: ["Three", "Four", "Five"], answer: 0, info: "A triangle has three sides." },
+      { q: "Which one is a programming language used to add interactions to websites?", options: ["JavaScript", "Paper", "JPEG"], answer: 0, info: "JavaScript can make websites interactive." }
+    ];
+    let quizIndex = 0, quizAnswered = false;
+    function renderQuiz() {
+      const item = quizQuestions[quizIndex];
+      quizAnswered = false;
+      document.getElementById("quizQuestion").textContent = `Question ${quizIndex + 1} of ${quizQuestions.length}: ${item.q}`;
+      document.getElementById("quizStatus").textContent = "";
+      const options = document.getElementById("quizOptions");
+      options.innerHTML = "";
+      item.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "quiz-option";
+        button.textContent = option;
+        button.addEventListener("click", () => {
+          if (quizAnswered) return;
+          quizAnswered = true;
+          const corre
