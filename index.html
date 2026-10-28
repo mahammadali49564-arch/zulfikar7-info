@@ -3,219 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Zulfikar7 Info | My Profile, Education & Games</title>
-
-<meta name="description" content="Welcome to Zulfikar7 Info, my personal website about coding, gaming, education, school subjects and free mini-games.">
-
-<meta name="theme-color" content="#87ceeb">
-
-<link rel="icon" type="image/png"
-href="file_00000000b00881f4accb3126c16ce979.png">
+<title>Zulfikar7 Info</title>
 
 <style>
-:root {
-  --blue: #168bd2;
-  --dark: #123c60;
-  --light: #eaf8ff;
-  --white: #ffffff;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--dark);
-  line-height: 1.6;
-
-  background-color: #87ceeb;
-  background-image:
-    linear-gradient(45deg, #b9eaff 25%, transparent 25%),
-    linear-gradient(-45deg, #b9eaff 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #b9eaff 75%),
-    linear-gradient(-45deg, transparent 75%, #b9eaff 75%);
-  background-size: 44px 44px;
-  background-position: 0 0, 0 22px, 22px -22px, -22px 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #001f6b, #087cf0, #00c6ff);
+    color: white;
+    text-align: center;
 }
 
 header {
-  background: rgba(255,255,255,0.96);
-  padding: 25px 15px;
-  text-align: center;
-  border-bottom: 4px solid #168bd2;
+    padding: 30px 15px;
+    background: rgba(0, 0, 50, 0.45);
 }
 
 .logo {
-  width: 105px;
-  height: 105px;
-  object-fit: contain;
-  border-radius: 20px;
-  background: white;
+    width: 85px;
+    height: 85px;
+    margin: auto;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    background: #003399;
 }
 
-header h1 {
-  margin: 10px 0 0;
-  font-size: clamp(27px, 5vw, 42px);
-  color: #087ac1;
+h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
-header p {
-  margin: 5px 0;
+section {
+    background: rgba(255,255,255,0.13);
+    margin: 20px auto;
+    padding: 25px 18px;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 650px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px;
-  background: #087ac1;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 20px;
-}
-
-nav a:hover {
-  background: #075c91;
-}
-
-.container {
-  width: min(100% - 24px, 1000px);
-  margin: 22px auto;
-}
-
-.card {
-  background: rgba(255,255,255,0.96);
-  padding: 23px;
-  border-radius: 18px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,60,100,0.10);
-  overflow-wrap: anywhere;
-}
-
-h2 {
-  color: #087ac1;
-  margin-top: 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-}
-
-.tile {
-  background: #e4f6ff;
-  border: 2px solid #b4e5ff;
-  border-radius: 15px;
-  padding: 17px 10px;
-  text-align: center;
-}
-
-.tile .emoji {
-  display: block;
-  font-size: 32px;
-}
-
-.game-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 15px;
-}
-
-.game {
-  padding: 17px;
-  border: 2px solid #b4e5ff;
-  border-radius: 15px;
-  background: #f5fcff;
-  min-width: 0;
-}
-
-.game h3 {
-  margin: 0 0 6px;
+.info {
+    font-size: 18px;
+    line-height: 2;
 }
 
 button {
-  border: none;
-  border-radius: 10px;
-  background: #087ac1;
-  color: white;
-  padding: 11px 14px;
-  margin: 4px 2px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  min-height: 44px;
+    background: white;
+    color: #0047ab;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 button:hover {
-  background: #075c91;
+    background: #bde8ff;
 }
 
-input {
-  max-width: 100%;
-  width: 100%;
-  min-height: 44px;
-  padding: 10px;
-  border: 2px solid #9bd9f7;
-  border-radius: 9px;
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.game-message {
-  min-height: 25px;
-  font-weight: bold;
-  overflow-wrap: anywhere;
-}
-
-canvas {
-  display: block;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  margin: 10px auto;
-  background: #e8f8ff;
-  border: 2px solid #87ceeb;
-  border-radius: 8px;
-  touch-action: manipulation;
+#result, #gameResult {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 footer {
-  text-align: center;
-  padding: 22px;
-  background: #075c91;
-  color: white;
+    background: rgba(0,0,30,0.4);
+    padding: 20px;
+    margin-top: 30px;
 }
 
-footer a {
-  color: white;
-}
-
-.small {
-  font-size: 13px;
-  color: #42627a;
-}
-
-[hidden] {
-  display: none !important;
+a {
+    color: white;
 }
 
 @media (max-width: 480px) {
-  .card {
-    padding: 17px;
-  }
-  nav a {
-    font-size: 14px;
-  }
+    h1 {
+        font-size: 26px;
+    }
+
+    section {
+        width: 92%;
+    }
 }
 </style>
 </head>
@@ -223,587 +104,96 @@ footer a {
 <body>
 
 <header>
-  <img class="logo"
-       src="file_00000000b00881f4accb3126c16ce979.png"
-       alt="Zulfikar7 Info logo"
-       onerror="this.style.display='none'">
-
-  <h1>Zulfikar7 Info</h1>
-  <p>My Profile • My Education • My Hobbies • My Games</p>
+    <div class="logo">Z7</div>
+    <h1>Welcome to Zulfikar7 Info</h1>
+    <p>My Personal Website</p>
 </header>
 
-<nav aria-label="Main navigation">
-  <a href="#about">About Me</a>
-  <a href="#education">Education</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#games">Play Games</a>
-</nav>
-
-<main class="container">
-
-  <section class="card" id="about">
-    <h2>👋 About Me</h2>
-    <p>
-      Welcome to Zulfikar7 Info! I am a student who enjoys learning,
-      exploring technology and developing new skills. This is my
-      personal website where I share my educational interests,
-      hobbies and love for coding.
-    </p>
-  </section>
-
-  <section class="card" id="education">
-    <h2>🎓 Schooling & Education</h2>
-    <p>
-      Education helps me develop knowledge, problem-solving abilities
-      and practical skills. I enjoy learning new things and improving
-      my understanding of different subjects.
-    </p>
-
-    <h3>📚 My School Subjects</h3>
-    <div class="grid">
-      <div class="tile">
-        <span class="emoji">➗</span>
-        <strong>Mathematics</strong>
-      </div>
-      <div class="tile">
-        <span class="emoji">📖</span>
-        <strong>English</strong>
-      </div>
-      <div class="tile">
-        <span class="emoji">🔬</span>
-        <strong>Science</strong>
-      </div>
+<section>
+    <h2>👨‍🎓 About Me</h2>
+    <div class="info">
+        <p><strong>Name:</strong> Zulfikar Ali</p>
+        <p><strong>Class:</strong> Standard 8</p>
+        <p><strong>Roll Number:</strong> 20</p>
+        <p><strong>School:</strong> Madinatul Ilm, Dholka</p>
+        <p><strong>Venue:</strong> School venue</p>
     </div>
-  </section>
+</section>
 
-  <section class="card" id="hobbies">
-    <h2>⭐ My Hobbies</h2>
-
-    <div class="grid">
-      <div class="tile">
-        <span class="emoji">💻</span>
-        <strong>Learning Coding</strong>
-        <p>I enjoy learning programming, exploring technology
-        and creating websites.</p>
-      </div>
-
-      <div class="tile">
-        <span class="emoji">🎮</span>
-        <strong>Playing Video Games</strong>
-        <p>I enjoy playing video games for fun and exploring
-        different gaming challenges.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="card" id="games">
-    <h2>🎮 Play & Enjoy</h2>
+<section>
+    <h2>✨ About My Website</h2>
     <p>
-      Choose a game below! These mini-games are built into this
-      webpage and do not need paid services.
+        Welcome to Zulfikar7 Info! This is my personal website.
+        Explore the quiz and play the mini game below.
     </p>
+</section>
 
-    <div class="game-list">
+<section>
+    <h2>🧠 General Knowledge Quiz</h2>
+    <p>What is the capital of India?</p>
 
-      <!-- GAME 1: DINO JUMP -->
-      <div class="game">
-        <h3>🦖 1. Dino Jump</h3>
-        <p class="small">Jump over obstacles and score points.</p>
-        <canvas id="dinoCanvas" width="320" height="130"
-                aria-label="Dinosaur jumping game"></canvas>
-        <p class="game-message" id="dinoMessage" aria-live="polite">
-          Tap Start, then Jump!
-        </p>
-        <button type="button" id="dinoStart">Start</button>
-        <button type="button" id="dinoJump">Jump</button>
-      </div>
+    <button onclick="checkAnswer('Mumbai')">Mumbai</button>
+    <button onclick="checkAnswer('New Delhi')">New Delhi</button>
+    <button onclick="checkAnswer('Chennai')">Chennai</button>
 
-      <!-- GAME 2: SNAKE -->
-      <div class="game">
-        <h3>🐍 2. Snake Game</h3>
-        <p class="small">Eat food. Use the arrows to move.</p>
-        <canvas id="snakeCanvas" width="320" height="200"
-                aria-label="Snake game"></canvas>
-        <p class="game-message" id="snakeMessage" aria-live="polite">
-          Press Start.
-        </p>
-        <div>
-          <button type="button" id="snakeStart">Start / Restart</button>
-        </div>
-        <div style="text-align:center">
-          <button type="button" data-dir="up">⬆️</button><br>
-          <button type="button" data-dir="left">⬅️</button>
-          <button type="button" data-dir="down">⬇️</button>
-          <button type="button" data-dir="right">➡️</button>
-        </div>
-      </div>
+    <p id="result"></p>
+</section>
 
-      <!-- GAME 3: PING PONG -->
-      <div class="game">
-        <h3>🏓 3. Ping Pong</h3>
-        <p class="small">Move your paddle to keep the ball up.</p>
-        <canvas id="pongCanvas" width="320" height="180"
-                aria-label="Ping pong game"></canvas>
-        <p class="game-message" id="pongMessage" aria-live="polite">
-          Tap Start to play.
-        </p>
-        <button type="button" id="pongStart">Start / Restart</button>
-        <button type="button" id="pongLeft">⬅️ Left</button>
-        <button type="button" id="pongRight">Right ➡️</button>
-      </div>
+<section>
+    <h2>🎮 Guess the Number</h2>
+    <p>Guess a number between 1 and 5!</p>
 
-      <!-- GAME 4: BREAKOUT -->
-      <div class="game">
-        <h3>🧱 4. Breakout</h3>
-        <p class="small">Break the bricks with the bouncing ball.</p>
-        <canvas id="brickCanvas" width="320" height="200"
-                aria-label="Breakout brick game"></canvas>
-        <p class="game-message" id="brickMessage" aria-live="polite">
-          Tap Start.
-        </p>
-        <button type="button" id="brickStart">Start / Restart</button>
-        <button type="button" id="brickLeft">⬅️</button>
-        <button type="button" id="brickRight">➡️</button>
-      </div>
+    <button onclick="playGame(1)">1</button>
+    <button onclick="playGame(2)">2</button>
+    <button onclick="playGame(3)">3</button>
+    <button onclick="playGame(4)">4</button>
+    <button onclick="playGame(5)">5</button>
 
-      <!-- GAME 5: MEMORY -->
-      <div class="game">
-        <h3>🧠 5. Memory Match</h3>
-        <p class="small">Find matching pairs of symbols.</p>
-        <div class="grid" id="memoryBoard"></div>
-        <p class="game-message" id="memoryMessage" aria-live="polite">
-          Find all matching pairs.
-        </p>
-        <button type="button" id="memoryStart">New Game</button>
-      </div>
+    <p id="gameResult"></p>
+    <button onclick="resetGame()">Play Again</button>
+</section>
 
-      <!-- GAME 6: TIC TAC TOE -->
-      <div class="game">
-        <h3>❌⭕ 6. Tic-Tac-Toe</h3>
-        <p class="small">Play X against the computer O.</p>
-        <div class="grid" id="tttBoard"></div>
-        <p class="game-message" id="tttMessage" aria-live="polite">
-          You are X.
-        </p>
-        <button type="button" id="tttStart">New Game</button>
-      </div>
-
-      <!-- GAME 7: NUMBER GUESS -->
-      <div class="game">
-        <h3>🔢 7. Number Guessing</h3>
-        <p class="small">Guess a number between 1 and 100.</p>
-        <form id="guessForm">
-          <label for="guessInput">Your guess</label>
-          <input id="guessInput" type="number" min="1" max="100"
-                 required placeholder="Enter a number">
-          <button type="submit">Guess</button>
-        </form>
-        <p class="game-message" id="guessMessage" aria-live="polite">
-          Start guessing!
-        </p>
-        <button type="button" id="guessStart">New Number</button>
-      </div>
-
-      <!-- GAME 8: ROCK PAPER SCISSORS -->
-      <div class="game">
-        <h3>✊ 8. Rock, Paper, Scissors</h3>
-        <p class="small">Choose one and challenge the computer.</p>
-        <button type="button" data-rps="rock">✊ Rock</button>
-        <button type="button" data-rps="paper">✋ Paper</button>
-        <button type="button" data-rps="scissors">✌️ Scissors</button>
-        <p class="game-message" id="rpsMessage" aria-live="polite">
-          Ready to play?
-        </p>
-        <p id="rpsScore">You: 0 | Computer: 0</p>
-      </div>
-
-    </div>
-
-    <p class="small">
-      Note: The games work locally in your browser after the webpage
-      has loaded. For offline use, save the webpage and its files on
-      your device. GitHub Pages itself needs an internet connection
-      to load a page that is not already saved or cached.
-    </p>
-  </section>
-
-  <section class="card">
-    <h2>🚀 My Goals</h2>
-    <ul>
-      <li>Improve my coding skills.</li>
-      <li>Learn how websites work.</li>
-      <li>Explore new technology.</li>
-      <li>Build useful projects.</li>
-    </ul>
-  </section>
-
-</main>
+<section>
+    <h2>🌟 Thank You!</h2>
+    <p>Thank you for visiting Zulfikar7 Info.</p>
+    <p>Keep learning and keep growing!</p>
+</section>
 
 <footer>
-  <p><strong>Zulfikar7 Info</strong></p>
-  <p>Learning • Coding • Gaming • Growing</p>
-  <p>© <span id="year"></span> Zulfikar7 Info</p>
+    <p>© 2026 Zulfikar7 Info</p>
+    <p>Created by Zulfikar Ali 💙</p>
 </footer>
 
 <script>
-"use strict";
+function checkAnswer(answer) {
+    const result = document.getElementById("result");
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-/* ==============================
-   1. DINO JUMP
-================================ */
-(() => {
-  const c = document.getElementById("dinoCanvas");
-  const ctx = c.getContext("2d");
-  const msg = document.getElementById("dinoMessage");
-  let running = false, raf = 0, score = 0;
-  let y = 90, vy = 0, obstacle = 320;
-
-  function draw() {
-    ctx.clearRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "#c6eeff";
-    ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "#168bd2";
-    ctx.fillRect(0, 111, c.width, 3);
-
-    ctx.fillStyle = "#087a35";
-    ctx.fillRect(35, y, 24, 21);
-    ctx.fillRect(49, y + 15, 15, 6);
-    ctx.fillStyle = "white";
-    ctx.fillRect(51, y + 4, 4, 4);
-
-    ctx.fillStyle = "#168b40";
-    ctx.fillRect(obstacle, 91, 13, 20);
-    ctx.fillRect(obstacle + 4, 84, 5, 10);
-
-    ctx.fillStyle = "#123c60";
-    ctx.font = "14px Arial";
-    ctx.fillText("Score: " + score, 225, 18);
-  }
-
-  function loop() {
-    if (!running) return;
-    vy += 0.5;
-    y += vy;
-    if (y > 90) {
-      y = 90;
-      vy = 0;
-    }
-
-    obstacle -= 3;
-    if (obstacle < -20) {
-      obstacle = 320 + Math.random() * 100;
-      score++;
-    }
-
-    if (obstacle < 63 && obstacle > 25 && y > 70) {
-      running = false;
-      msg.textContent = "Game over! Score: " + score;
-      draw();
-      return;
-    }
-
-    draw();
-    raf = requestAnimationFrame(loop);
-  }
-
-  document.getElementById("dinoStart").addEventListener("click", () => {
-    cancelAnimationFrame(raf);
-    score = 0;
-    y = 90;
-    vy = 0;
-    obstacle = 320;
-    running = true;
-    msg.textContent = "Jump over the obstacles!";
-    loop();
-  });
-
-  document.getElementById("dinoJump").addEventListener("click", () => {
-    if (running && y >= 90) vy = -8;
-  });
-
-  c.addEventListener("pointerdown", () => {
-    if (running && y >= 90) vy = -8;
-  });
-
-  draw();
-})();
-
-/* ==============================
-   2. SNAKE GAME
-================================ */
-(() => {
-  const c = document.getElementById("snakeCanvas");
-  const ctx = c.getContext("2d");
-  const msg = document.getElementById("snakeMessage");
-  const size = 16, cols = 20, rows = 12;
-  let snake, food, dir, nextDir, score, timer, active;
-
-  function reset() {
-    clearInterval(timer);
-    snake = [{x: 8, y: 6}, {x: 7, y: 6}, {x: 6, y: 6}];
-    dir = {x: 1, y: 0};
-    nextDir = dir;
-    score = 0;
-    active = true;
-    placeFood();
-    msg.textContent = "Score: 0";
-    draw();
-    timer = setInterval(step, 140);
-  }
-
-  function placeFood() {
-    do {
-      food = {
-        x: Math.floor(Math.random() * cols),
-        y: Math.floor(Math.random() * rows)
-      };
-    } while (snake && snake.some(p => p.x === food.x && p.y === food.y));
-  }
-
-  function draw() {
-    ctx.fillStyle = "#e8f8ff";
-    ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "#e44b55";
-    ctx.fillRect(food.x * size, food.y * size, size - 2, size - 2);
-    snake.forEach((p, i) => {
-      ctx.fillStyle = i === 0 ? "#087ac1" : "#38a169";
-      ctx.fillRect(p.x * size, p.y * size, size - 2, size - 2);
-    });
-  }
-
-  function step() {
-    dir = nextDir;
-    const head = {
-      x: snake[0].x + dir.x,
-      y: snake[0].y + dir.y
-    };
-
-    const eating = head.x === food.x && head.y === food.y;
-    const body = eating ? snake : snake.slice(0, -1);
-
-    if (head.x < 0 || head.x >= cols ||
-        head.y < 0 || head.y >= rows ||
-        body.some(p => p.x === head.x && p.y === head.y)) {
-      active = false;
-      clearInterval(timer);
-      msg.textContent = "Game over! Score: " + score;
-      return;
-    }
-
-    snake.unshift(head);
-    if (eating) {
-      score++;
-      placeFood();
-      msg.textContent = "Score: " + score;
+    if (answer === "New Delhi") {
+        result.textContent = "🎉 Correct! New Delhi is the capital of India.";
     } else {
-      snake.pop();
+        result.textContent = "❌ Try again!";
     }
-    draw();
-  }
+}
 
-  function change(d) {
-    if (!active) return;
-    if (d === "up" && dir.y !== 1) nextDir = {x: 0, y: -1};
-    if (d === "down" && dir.y !== -1) nextDir = {x: 0, y: 1};
-    if (d === "left" && dir.x !== 1) nextDir = {x: -1, y: 0};
-    if (d === "right" && dir.x !== -1) nextDir = {x: 1, y: 0};
-  }
+let secretNumber = Math.floor(Math.random() * 5) + 1;
 
-  document.getElementById("snakeStart").addEventListener("click", reset);
-  document.querySelectorAll("[data-dir]").forEach(b => {
-    b.addEventListener("click", () => change(b.dataset.dir));
-  });
+function playGame(number) {
+    const result = document.getElementById("gameResult");
 
-  document.addEventListener("keydown", e => {
-    const map = {
-      ArrowUp: "up", ArrowDown: "down",
-      ArrowLeft: "left", ArrowRight: "right"
-    };
-    if (map[e.key] && c.matches(":hover")) {
-      e.preventDefault();
-      change(map[e.key]);
+    if (number === secretNumber) {
+        result.textContent = "🎉 Excellent! You guessed correctly!";
+    } else {
+        result.textContent = "❌ Not this time! Try another number.";
     }
-  });
+}
 
-  ctx.fillStyle = "#123c60";
-  ctx.font = "14px Arial";
-  ctx.fillText("Press Start to play Snake", 65, 100);
-})();
+function resetGame() {
+    secretNumber = Math.floor(Math.random() * 5) + 1;
+    document.getElementById("gameResult").textContent =
+        "A new number is ready. Guess again!";
+}
+</script>
 
-/* ==============================
-   3. PING PONG
-================================ */
-(() => {
-  const c = document.getElementById("pongCanvas");
-  const ctx = c.getContext("2d");
-  const msg = document.getElementById("pongMessage");
-  let paddle = 130, ballX = 160, ballY = 70;
-  let vx = 2.5, vy = 2.5, score = 0, active = false, raf = 0;
+</body>
+</html>
 
-  function draw() {
-    ctx.fillStyle = "#e8f8ff";
-    ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "#168bd2";
-    ctx.fillRect(paddle, 162, 65, 8);
-    ctx.beginPath();
-    ctx.arc(ballX, ballY, 6, 0, Math.PI * 2);
-    ctx.fillStyle = "#e44b55";
-    ctx.fill();
-    ctx.fillStyle = "#123c60";
-    ctx.font = "14px Arial";
-    ctx.fillText("Score: " + score, 8, 18);
-  }
-
-  function loop() {
-    if (!active) return;
-    ballX += vx;
-    ballY += vy;
-
-    if (ballX < 6 || ballX > 314) vx *= -1;
-    if (ballY < 6) vy *= -1;
-
-    if (ballY >= 154 && ballY < 170 &&
-        ballX >= paddle && ballX <= paddle + 65 && vy > 0) {
-      vy *= -1;
-      score++;
-      msg.textContent = "Score: " + score;
-    }
-
-    if (ballY > 180) {
-      active = false;
-      msg.textContent = "Game over! Score: " + score;
-      draw();
-      return;
-    }
-
-    draw();
-    raf = requestAnimationFrame(loop);
-  }
-
-  function move(amount) {
-    paddle = Math.max(0, Math.min(255, paddle + amount));
-    draw();
-  }
-
-  document.getElementById("pongStart").addEventListener("click", () => {
-    cancelAnimationFrame(raf);
-    paddle = 130;
-    ballX = 160;
-    ballY = 70;
-    vx = 2.5;
-    vy = 2.5;
-    score = 0;
-    active = true;
-    msg.textContent = "Keep the ball up!";
-    loop();
-  });
-
-  document.getElementById("pongLeft").addEventListener("click", () => move(-25));
-  document.getElementById("pongRight").addEventListener("click", () => move(25));
-
-  c.addEventListener("pointermove", e => {
-    if (!active || !(e.buttons || e.pointerType === "touch")) return;
-    const r = c.getBoundingClientRect();
-    paddle = Math.max(0, Math.min(255,
-      (e.clientX - r.left) * c.width / r.width - 32));
-    draw();
-  });
-
-  draw();
-})();
-
-/* ==============================
-   4. BREAKOUT
-================================ */
-(() => {
-  const c = document.getElementById("brickCanvas");
-  const ctx = c.getContext("2d");
-  const msg = document.getElementById("brickMessage");
-  let paddle = 130, x, y, vx, vy, bricks, active = false, raf = 0, score = 0;
-
-  function reset() {
-    cancelAnimationFrame(raf);
-    paddle = 130;
-    x = 160; y = 150; vx = 2; vy = -2;
-    score = 0;
-    bricks = [];
-    for (let r = 0; r < 3; r++) {
-      for (let col = 0; col < 8; col++) {
-        bricks.push({x: col * 39 + 5, y: r * 18 + 10, alive: true});
-      }
-    }
-    active = true;
-    msg.textContent = "Break all the bricks!";
-    loop();
-  }
-
-  function draw() {
-    ctx.fillStyle = "#e8f8ff";
-    ctx.fillRect(0, 0, c.width, c.height);
-    bricks.forEach((b, i) => {
-      if (!b.alive) return;
-      ctx.fillStyle = ["#168bd2", "#48a9e6", "#087a9e"][i % 3];
-      ctx.fillRect(b.x, b.y, 34, 12);
-    });
-    ctx.fillStyle = "#123c60";
-    ctx.fillRect(paddle, 185, 60, 6);
-    ctx.beginPath();
-    ctx.arc(x, y, 5, 0, Math.PI * 2);
-    ctx.fillStyle = "#e44b55";
-    ctx.fill();
-    ctx.fillStyle = "#123c60";
-    ctx.font = "13px Arial";
-    ctx.fillText("Score: " + score, 8, 195);
-  }
-
-  function loop() {
-    if (!active) return;
-
-    x += vx;
-    y += vy;
-
-    if (x < 5 || x > 315) vx *= -1;
-    if (y < 5) vy *= -1;
-
-    if (vy > 0 && y >= 177 && x >= paddle && x <= paddle + 60) {
-      vy *= -1;
-      vx += (x - (paddle + 30)) * 0.02;
-    }
-
-    for (const b of bricks) {
-      if (b.alive && x >= b.x && x <= b.x + 34 &&
-          y >= b.y && y <= b.y + 12) {
-        b.alive = false;
-        vy *= -1;
-        score++;
-        break;
-      }
-    }
-
-    if (bricks.every(b => !b.alive)) {
-      active = false;
-      msg.textContent = "You win! Score: " + score;
-      draw();
-      return;
-    }
-
-    if (y > 205) {
-      active = false;
-      msg.textContent = "Game over! Score: " + score;
-      draw();
-      return;
-    }
-
-    draw();
-    raf = requestAnimationFrame(loop);
-  }
-
-  function move(n) {
-    paddle = Math.max(0, Math.min(260, paddle + n));
-    draw();
-  }
-
-  document.getElementById("brickStart").addEventLis
