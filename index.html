@@ -1,376 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zulfikar7 Info - personal website, education, hobbies, quizzes and mini games.">
-  <title>Zulfikar7 Info</title>
-  <style>
-    :root {
-      --navy: #071b49;
-      --blue: #0b55c7;
-      --bright: #36b5ff;
-      --pale: #eaf4ff;
-      --white: #ffffff;
-      --ink: #12213a;
-      --muted: #52647d;
-      --green: #0b9b70;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: linear-gradient(135deg, #061b49 0%, #0b55c7 52%, #24a9ee 100%);
-      min-height: 100vh;
-    }
-    a { color: inherit; }
-    .site-wrap { width: min(1100px, 94%); margin: 0 auto; }
-    header {
-      color: white;
-      padding: 22px 0 14px;
-    }
-    .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .logo {
-      width: 52px; height: 52px; border-radius: 16px;
-      display: grid; place-items: center; background: white; color: var(--blue);
-      font-size: 23px; font-weight: 900; box-shadow: 0 8px 24px #00143a55;
-    }
-    .brand h1 { margin: 0; font-size: clamp(24px, 5vw, 34px); letter-spacing: .3px; }
-    .brand p { margin: 4px 0 0; color: #d8edff; font-size: 13px; }
-    nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 4px; }
-    nav a {
-      text-decoration: none; color: white; font-size: 14px; font-weight: 700;
-      padding: 9px 13px; border-radius: 999px; background: #ffffff18;
-      border: 1px solid #ffffff35;
-    }
-    nav a:hover { background: white; color: var(--blue); }
-    .hero {
-      display: grid; grid-template-columns: 1.35fr .65fr; gap: 22px; align-items: stretch;
-      padding: 26px 0 30px; color: white;
-    }
-    .hero-copy, .hero-card {
-      border: 1px solid #ffffff3d; border-radius: 26px;
-      background: #ffffff12; backdrop-filter: blur(6px); padding: clamp(22px, 5vw, 38px);
-      box-shadow: 0 18px 40px #00143a26;
-    }
-    .tag { display: inline-block; border-radius: 999px; padding: 7px 12px; background: #ffffff22; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
-    .hero h2 { font-size: clamp(30px, 6vw, 54px); line-height: 1.08; margin: 17px 0 12px; }
-    .hero p { color: #e2f3ff; line-height: 1.7; }
-    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .btn { border: 0; cursor: pointer; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; display: inline-block; }
-    .btn-light { background: white; color: var(--blue); }
-    .btn-glass { color: white; background: #ffffff20; border: 1px solid #ffffff50; }
-    .hero-card { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-    .avatar {
-      width: 116px; height: 116px; border-radius: 50%; display: grid; place-items: center;
-      background: linear-gradient(145deg, white, #b8e6ff); color: var(--blue);
-      font-size: 44px; font-weight: 900; border: 5px solid #ffffff66;
-      box-shadow: 0 10px 35px #00143a55;
-    }
-    .hero-card h3 { margin: 17px 0 5px; font-size: 23px; }
-    .hero-card p { margin: 5px 0; font-size: 14px; }
-    main { padding-bottom: 35px; }
-    section.panel {
-      background: white; border-radius: 22px; margin: 18px 0; padding: clamp(20px, 4vw, 30px);
-      box-shadow: 0 14px 34px #00143a25; scroll-margin-top: 12px;
-    }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
-    .section-head h2 { margin: 0; font-size: clamp(23px, 4vw, 31px); color: var(--navy); }
-    .section-head p { margin: 7px 0 0; color: var(--muted); line-height: 1.5; }
-    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
-    .card { border: 1px solid #dce9f8; background: #f8fbff; border-radius: 17px; padding: 18px; }
-    .card .icon { font-size: 27px; }
-    .card h3 { margin: 9px 0 7px; color: var(--navy); }
-    .card p { color: var(--muted); line-height: 1.6; margin: 0; }
-    .details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .detail { padding: 14px; border-radius: 13px; background: var(--pale); }
-    .detail strong { display: block; color: var(--blue); font-size: 12px; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 6px; }
-    .detail span { font-weight: 700; overflow-wrap: anywhere; }
-    .game-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .game { border: 1px solid #dce9f8; border-radius: 18px; padding: 18px; background: #f8fbff; min-width: 0; }
-    .game h3 { margin: 0 0 8px; color: var(--navy); }
-    .game p { color: var(--muted); line-height: 1.5; }
-    button, input, select { font: inherit; }
-    .control { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
-    .control input { width: min(100%, 190px); border: 1px solid #cbd8e8; border-radius: 10px; padding: 10px 12px; }
-    .btn-blue { color: white; background: var(--blue); }
-    .btn-outline { color: var(--blue); background: white; border: 1px solid #b8cde8; }
-    .status { min-height: 24px; font-weight: 700; margin-top: 12px; color: var(--blue); }
-    .ttt-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; width: min(100%, 270px); margin-top: 12px; }
-    .ttt-cell { aspect-ratio: 1; border: 1px solid #bcd2ef; border-radius: 12px; background: white; color: var(--blue); font-size: clamp(26px, 6vw, 38px); font-weight: 900; cursor: pointer; }
-    .rps-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
-    .rps-buttons button { min-width: 82px; }
-    .quiz-option { width: 100%; text-align: left; margin: 5px 0; border: 1px solid #cbd8e8; background: white; padding: 11px; border-radius: 10px; cursor: pointer; }
-    .quiz-option:hover { border-color: var(--blue); background: var(--pale); }
-    .footer { color: #e4f4ff; text-align: center; padding: 18px 10px 28px; font-size: 13px; line-height: 1.7; }
-    .small-note { color: var(--muted); font-size: 13px; }
-    @media (max-width: 720px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      .game-grid { grid-template-columns: 1fr; }
-      .details { grid-template-columns: 1fr; }
-      nav a { font-size: 13px; padding: 8px 10px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0758c9">
+<title>Zulfikar7 Info | Learn, Play & Grow</title>
+<style>
+:root{--navy:#052b70;--blue:#0878f9;--cyan:#31d5ff;--glass:rgba(255,255,255,.12);--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--white);background:linear-gradient(135deg,#031b50 0%,#0758c9 48%,#08a9e8 100%);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.12),transparent 25%),radial-gradient(circle at 85% 70%,rgba(49,213,255,.17),transparent 28%);z-index:-1}
+header{padding:24px 16px 36px;text-align:center;background:rgba(0,16,62,.35);border-bottom:1px solid #ffffff30}
+.logo{width:82px;height:82px;border:3px solid white;border-radius:50%;display:grid;place-items:center;margin:auto;background:linear-gradient(135deg,#00b9ff,#073baf);font-weight:900;font-size:26px;box-shadow:0 0 28px #31d5ff66}
+header h1{font-size:clamp(2rem,6vw,3.5rem);margin:14px 0 5px;letter-spacing:.4px}
+header p{margin:0;color:#d9f6ff;font-size:1.08rem}
+nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:14px;background:#001c53a8;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+nav a{color:white;text-decoration:none;padding:9px 13px;border-radius:999px;font-weight:700;font-size:.92rem}
+nav a:hover,nav a:focus{background:#ffffff2b}
+main{width:min(1080px,94%);margin:24px auto 50px}
+.hero{padding:30px 18px;text-align:center;border-radius:24px;background:linear-gradient(120deg,#ffffff1e,#ffffff08);border:1px solid #ffffff35;box-shadow:0 18px 45px #00163c30}
+.hero h2{font-size:clamp(1.5rem,4vw,2.3rem);margin:0 0 10px}
+.hero p{max-width:680px;margin:0 auto 18px;color:#e3f6ff;line-height:1.7}
+.btn,button{border:0;border-radius:12px;padding:11px 16px;font:inherit;font-weight:800;cursor:pointer;background:#fff;color:#064aa6;transition:transform .15s,filter .15s}
+.btn{display:inline-block;text-decoration:none;margin:5px}
+button:hover,.btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ffe56d;outline-offset:3px}
+section.panel{margin-top:22px;padding:23px;border-radius:22px;background:var(--glass);border:1px solid #ffffff35;box-shadow:0 12px 35px #00163c22}
+h2.section-title{margin:0 0 16px;font-size:1.65rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.card{padding:18px;border-radius:17px;background:#001b53a6;border:1px solid #ffffff2c}
+.card h3{margin:0 0 9px}
+.card p{line-height:1.6;color:#e0f4ff}
+.info-row{padding:10px 0;border-bottom:1px solid #ffffff27;display:flex;gap:10px;flex-wrap:wrap}
+.info-row:last-child{border:0}
+.label{font-weight:800;color:#a9ecff;min-width:115px}
+.game{background:#ffffff12;border:1px solid #ffffff35;border-radius:17px;padding:18px}
+.game h3{margin-top:0}
+.game button{margin:5px 4px 2px}
+.game input{width:min(100%,180px);padding:12px;border-radius:10px;border:2px solid #c6e8ff;font:inherit;margin:6px 0;color:#062b65}
+.output{min-height:28px;font-weight:800;margin:12px 0 0;color:#fff2a8;line-height:1.5}
+.small{font-size:.92rem;color:#d7efff}
+.scorebar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.badge{background:#001a50a8;padding:10px 14px;border-radius:12px;border:1px solid #ffffff2c;font-weight:800}
+.quiz-option{display:block;width:100%;text-align:left;margin:8px 0}
+.quiz-option:disabled{opacity:.85;cursor:default;transform:none}
+.memory-grid{display:grid;grid-template-columns:repeat(4,minmax(45px,1fr));gap:8px;max-width:340px;margin:14px auto}
+.memory-card{padding:0;height:62px;font-size:1.45rem;background:#fff;color:#064aa6;border-radius:12px}
+.memory-card.matched{background:#8ff0ca;color:#063f35}
+footer{text-align:center;padding:24px 12px;background:#0015419c;color:#d7efff}
+footer p{margin:5px}
+@media(max-width:520px){nav{position:static}section.panel{padding:16px}.hero{padding:25px 15px}.label{min-width:100px}.memory-card{height:54px}}
+</style>
 </head>
 <body>
-  <header class="site-wrap">
-    <div class="brand-row">
-      <div class="brand">
-        <div class="logo">Z7</div>
-        <div>
-          <h1>Zulfikar7 Info</h1>
-          <p>A little website about me, learning and fun</p>
-        </div>
-      </div>
-    </div>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#education">Education</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#games">Games</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <div class="site-wrap">
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <span class="tag">WELCOME TO MY WEBSITE</span>
-        <h2>Explore.<br>Learn. Play.</h2>
-        <p>Welcome to Zulfikar7 Info — my personal corner of the internet, with information about me, my education, my hobbies, and some fun mini-games.</p>
-        <div class="buttons">
-          <a class="btn btn-light" href="#about">Explore Website ↓</a>
-          <a class="btn btn-glass" href="#games">Play a Game 🎮</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="avatar" aria-label="Z7 initials">Z7</div>
-        <h3>Zulfikar</h3>
-        <p>Student • Learner • Explorer</p>
-        <p>✨ Keep learning, keep growing!</p>
-      </div>
-    </section>
-
-    <main>
-      <section class="panel" id="about">
-        <div class="section-head">
-          <div><h2>👋 About Me</h2><p>A quick introduction.</p></div>
-        </div>
-        <div class="grid">
-          <article class="card"><div class="icon">🌟</div><h3>Who I Am</h3><p>I'm a student who enjoys learning new things and exploring technology.</p></article>
-          <article class="card"><div class="icon">💡</div><h3>My Goal</h3><p>To learn useful skills, improve every day, and build creative projects.</p></article>
-          <article class="card"><div class="icon">🌐</div><h3>My Website</h3><p>This is my own website, made with HTML, CSS, and JavaScript.</p></article>
-        </div>
-      </section>
-
-      <section class="panel" id="education">
-        <div class="section-head"><div><h2>🎓 Education</h2><p>My school information.</p></div></div>
-        <div class="details">
-          <div class="detail"><strong>Class / Standard</strong><span>Standard 8</span></div>
-          <div class="detail"><strong>Roll Number</strong><span>20</span></div>
-          <div class="detail"><strong>School</strong><span>Madinatul Ilm, Dholka</span></div>
-          <div class="detail"><strong>Venue</strong><span>School venue</span></div>
-        </div>
-        <p class="small-note">You can edit these details in the HTML if they change.</p>
-      </section>
-
-      <section class="panel" id="hobbies">
-        <div class="section-head"><div><h2>🎯 My Hobbies</h2><p>Things I enjoy and skills I want to explore.</p></div></div>
-        <div class="grid">
-          <article class="card"><div class="icon">💻</div><h3>Technology</h3><p>Exploring websites, apps, and new technology.</p></article>
-          <article class="card"><div class="icon">🎮</div><h3>Gaming</h3><p>Playing games and learning how they work.</p></article>
-          <article class="card"><div class="icon">📚</div><h3>Learning</h3><p>Discovering new ideas and improving my knowledge.</p></article>
-        </div>
-      </section>
-
-      <section class="panel" id="games">
-        <div class="section-head"><div><h2>🎮 Fun Zone — Mini Games</h2><p>Play these games right on the website. No downloads needed.</p></div></div>
-        <div class="game-grid">
-          <article class="game">
-            <h3>⭕ Tic-Tac-Toe</h3><p>You are X. The computer is O. Try to get three in a row.</p>
-            <div class="ttt-board" id="tttBoard" aria-label="Tic Tac Toe board"></div>
-            <div class="status" id="tttStatus" aria-live="polite">Your turn — choose a square.</div>
-            <button class="btn btn-blue" id="tttReset">Restart Game</button>
-          </article>
-          <article class="game">
-            <h3>✊ Rock Paper Scissors</h3><p>Choose rock, paper, or scissors to play against the computer.</p>
-            <div class="rps-buttons">
-              <button class="btn btn-outline" data-rps="rock">✊ Rock</button>
-              <button class="btn btn-outline" data-rps="paper">✋ Paper</button>
-              <button class="btn btn-outline" data-rps="scissors">✌️ Scissors</button>
-            </div>
-            <div class="status" id="rpsStatus" aria-live="polite">Make your choice!</div>
-            <button class="btn btn-blue" id="rpsReset">Reset Score</button>
-          </article>
-          <article class="game">
-            <h3>🔢 Number Guessing</h3><p>I'm thinking of a number from 1 to 20. Can you guess it?</p>
-            <form id="guessForm" class="control">
-              <input id="guessInput" type="number" min="1" max="20" placeholder="Enter 1–20" required>
-              <button class="btn btn-blue" type="submit">Guess</button>
-            </form>
-            <div class="status" id="guessStatus" aria-live="polite">You have 5 tries.</div>
-            <button class="btn btn-outline" id="guessReset">New Number</button>
-          </article>
-          <article class="game" id="quiz">
-            <h3>🧠 Quick Quiz</h3><p id="quizQuestion">Loading question…</p>
-            <div id="quizOptions"></div>
-            <div class="status" id="quizStatus" aria-live="polite"></div>
-            <button class="btn btn-blue" id="quizNext">Next Question</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel" id="contact">
-        <div class="section-head"><div><h2>📬 Contact</h2><p>Keep in touch safely.</p></div></div>
-        <div class="card">
-          <h3>Thanks for visiting!</h3>
-          <p>This is a personal demo website. If you want to add contact details, only publish information you are comfortable sharing publicly. Avoid posting your home address or private phone number.</p>
-        </div>
-      </section>
-    </main>
+<header id="home">
+  <div class="logo" aria-label="Z7 logo">Z7</div>
+  <h1>Zulfikar7 Info</h1>
+  <p>Learn • Play • Explore • Grow</p>
+</header>
+<nav aria-label="Main navigation">
+  <a href="#home">Home</a><a href="#about">About</a><a href="#games">Games</a><a href="#quiz">Quiz</a><a href="#scores">Scores</a>
+</nav>
+<main>
+  <div class="hero">
+    <h2>Welcome to Zulfikar7 Info! 💙</h2>
+    <p>A personal learning website with fun mini-games and quizzes. Explore, challenge yourself, and keep learning every day!</p>
+    <a class="btn" href="#games">🎮 Play Games</a>
+    <a class="btn" href="#quiz">🧠 Start Quiz</a>
   </div>
 
-  <footer class="footer">
-    <div>© <span id="year"></span> Zulfikar7 Info</div>
-    <div>Made with HTML, CSS and JavaScript 💙</div>
-  </footer>
+  <section class="panel" id="about">
+    <h2 class="section-title">👨‍🎓 About Me</h2>
+    <div class="card">
+      <div class="info-row"><span class="label">Name</span><span>Zulfikar Ali</span></div>
+      <div class="info-row"><span class="label">Class</span><span>Standard 8</span></div>
+      <div class="info-row"><span class="label">Roll Number</span><span>20</span></div>
+      <div class="info-row"><span class="label">School</span><span>Madinatul Ilm, Dholka</span></div>
+      <div class="info-row"><span class="label">Venue</span><span>School venue</span></div>
+    </div>
+    <p class="small">This is a student-made personal project for learning and fun.</p>
+  </section>
 
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <section class="panel">
+    <h2 class="section-title">✨ Website Features</h2>
+    <div class="grid">
+      <div class="card"><h3>📱 Mobile Friendly</h3><p>Designed to fit phone, tablet, and computer screens.</p></div>
+      <div class="card"><h3>🎮 Five Mini-Games</h3><p>Number guessing, maths challenge, memory match, rock-paper-scissors, and a quiz.</p></div>
+      <div class="card"><h3>🏆 Score Tracker</h3><p>Keep track of your best game score on this device.</p></div>
+    </div>
+  </section>
 
-    // Tic-Tac-Toe
-    const tttBoard = document.getElementById("tttBoard");
-    const tttStatus = document.getElementById("tttStatus");
-    let tttCells = Array(9).fill("");
-    let tttOver = false;
-    const winLines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-    function tttWinner(board) {
-      for (const line of winLines) {
-        const [a,b,c] = line;
-        if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a];
-      }
-      return "";
-    }
-    function renderTtt() {
-      tttBoard.innerHTML = "";
-      tttCells.forEach((value, index) => {
-        const cell = document.createElement("button");
-        cell.type = "button";
-        cell.className = "ttt-cell";
-        cell.textContent = value;
-        cell.setAttribute("aria-label", "Square " + (index + 1) + (value ? ", " + value : ""));
-        cell.disabled = Boolean(value) || tttOver;
-        cell.addEventListener("click", () => playTtt(index));
-        tttBoard.appendChild(cell);
-      });
-    }
-    function finishTtt(message) { tttOver = true; tttStatus.textContent = message; renderTtt(); }
-    function playTtt(index) {
-      if (tttOver || tttCells[index]) return;
-      tttCells[index] = "X";
-      if (tttWinner(tttCells) === "X") { finishTtt("You win! 🎉"); return; }
-      if (tttCells.every(Boolean)) { finishTtt("It's a draw!"); return; }
-      const empty = tttCells.map((v,i) => v ? -1 : i).filter(i => i >= 0);
-      let move = empty.find(i => { const b = [...tttCells]; b[i] = "O"; return tttWinner(b) === "O"; });
-      if (move === undefined) move = empty.find(i => { const b = [...tttCells]; b[i] = "X"; return tttWinner(b) === "X"; });
-      if (move === undefined && !tttCells[4]) move = 4;
-      if (move === undefined) move = empty.find(i => [0,2,6,8].includes(i));
-      if (move === undefined) move = empty[Math.floor(Math.random() * empty.length)];
-      if (move !== undefined) tttCells[move] = "O";
-      if (tttWinner(tttCells) === "O") { finishTtt("Computer wins. Try again!"); return; }
-      if (tttCells.every(Boolean)) { finishTtt("It's a draw!"); return; }
-      tttStatus.textContent = "Your turn — choose a square.";
-      renderTtt();
-    }
-    function resetTtt() { tttCells = Array(9).fill(""); tttOver = false; tttStatus.textContent = "Your turn — choose a square."; renderTtt(); }
-    document.getElementById("tttReset").addEventListener("click", resetTtt);
-    resetTtt();
+  <section class="panel" id="games">
+    <h2 class="section-title">🎮 Mini-Games Zone</h2>
+    <div class="scorebar">
+      <div class="badge">⭐ Total points: <span id="totalScore">0</span></div>
+      <div class="badge">🏆 Best score: <span id="bestScore">0</span></div>
+    </div>
+    <div class="grid">
+      <div class="game">
+        <h3>🔢 1. Guess the Number</h3>
+        <p class="small">Guess a number from 1 to 10.</p>
+        <input id="guessInput" type="number" min="1" max="10" placeholder="1 to 10" inputmode="numeric">
+        <button onclick="guessNumber()">Guess</button><button onclick="newNumber()">New Number</button>
+        <p class="output" id="guessOutput" aria-live="polite">Ready? Make a guess!</p>
+      </div>
+      <div class="game">
+        <h3>➗ 2. Maths Challenge</h3>
+        <p id="mathQuestion">Press Start to get a question.</p>
+        <button onclick="startMath()">Start</button>
+        <div id="mathAnswers"></div>
+        <p class="output" id="mathOutput" aria-live="polite"></p>
+      </div>
+      <div class="game">
+        <h3>✊ 3. Rock, Paper, Scissors</h3>
+        <p class="small">Choose your move against the computer.</p>
+        <button onclick="rps('rock')">✊ Rock</button><button onclick="rps('paper')">✋ Paper</button><button onclick="rps('scissors')">✌️ Scissors</button>
+        <p class="output" id="rpsOutput" aria-live="polite">Choose a move!</p>
+      </div>
+      <div class="game">
+        <h3>🧠 4. Memory Match</h3>
+        <p class="small">Tap two cards and find matching pairs.</p>
+        <button onclick="startMemory()">Start / Shuffle</button>
+        <div id="memoryGrid" class="memory-grid"></div>
+        <p class="output" id="memoryOutput" aria-live="polite">Press Start to play.</p>
+      </div>
+      <div class="game">
+        <h3>⚡ 5. Quick Click Challenge</h3>
+        <p class="small">Tap the button as many times as you can in 10 seconds.</p>
+        <p>Time: <strong id="clickTime">10</strong>s | Clicks: <strong id="clickCount">0</strong></p>
+        <button id="clickStart" onclick="startClickGame()">Start Challenge</button>
+        <button id="clickTarget" onclick="countClick()" disabled>Tap me!</button>
+        <p class="output" id="clickOutput" aria-live="polite">Ready when you are.</p>
+      </div>
+    </div>
+  </section>
 
-    // Rock Paper Scissors
-    let rpsWins = 0, rpsLosses = 0, rpsDraws = 0;
-    document.querySelectorAll("[data-rps]").forEach(button => {
-      button.addEventListener("click", () => {
-        const you = button.dataset.rps;
-        const choices = ["rock", "paper", "scissors"];
-        const computer = choices[Math.floor(Math.random() * choices.length)];
-        let result;
-        if (you === computer) { result = "Draw!"; rpsDraws++; }
-        else if ((you === "rock" && computer === "scissors") || (you === "paper" && computer === "rock") || (you === "scissors" && computer === "paper")) { result = "You win! 🎉"; rpsWins++; }
-        else { result = "Computer wins this round."; rpsLosses++; }
-        document.getElementById("rpsStatus").textContent = `You: ${you} | Computer: ${computer}. ${result} Score — Wins: ${rpsWins}, Losses: ${rpsLosses}, Draws: ${rpsDraws}.`;
-      });
-    });
-    document.getElementById("rpsReset").addEventListener("click", () => {
-      rpsWins = 0; rpsLosses = 0; rpsDraws = 0;
-      document.getElementById("rpsStatus").textContent = "Score reset. Make your choice!";
-    });
+  <section class="panel" id="quiz">
+    <h2 class="section-title">🧠 General Knowledge Quiz</h2>
+    <div class="card">
+      <div class="scorebar"><div class="badge">Question: <span id="quizNumber">1</span>/5</div><div class="badge">Quiz score: <span id="quizScore">0</span></div></div>
+      <h3 id="quizQuestion">Loading question...</h3>
+      <div id="quizOptions"></div>
+      <p class="output" id="quizOutput" aria-live="polite"></p>
+      <button id="nextQuiz" onclick="nextQuestion()" style="display:none">Next Question ➜</button>
+      <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </section>
 
-    // Number guessing
-    let secretNumber, guessesLeft;
-    function resetGuess() {
-      secretNumber = Math.floor(Math.random() * 20) + 1;
-      guessesLeft = 5;
-      document.getElementById("guessInput").value = "";
-      document.getElementById("guessInput").disabled = false;
-      document.querySelector('#guessForm button[type="submit"]').disabled = false;
-      document.getElementById("guessStatus").textContent = "You have 5 tries.";
-    }
-    document.getElementById("guessForm").addEventListener("submit", event => {
-      event.preventDefault();
-      const input = document.getElementById("guessInput");
-      const guess = Number(input.value);
-      if (!Number.isInteger(guess) || guess < 1 || guess > 20) {
-        document.getElementById("guessStatus").textContent = "Enter a whole number from 1 to 20.";
-        return;
-      }
-      guessesLeft--;
-      if (guess === secretNumber) {
-        document.getElementById("guessStatus").textContent = `Correct! 🎉 The number was ${secretNumber}.`;
-        input.disabled = true;
-        document.querySelector('#guessForm button[type="submit"]').disabled = true;
-      } else if (guessesLeft === 0) {
-        document.getElementById("guessStatus").textContent = `No tries left. The number was ${secretNumber}. Tap New Number to play again.`;
-        input.disabled = true;
-        document.querySelector('#guessForm button[type="submit"]').disabled = true;
-      } else {
-        document.getElementById("guessStatus").textContent = `${guess < secretNumber ? "Too low!" : "Too high!"} ${guessesLeft} tries left.`;
-        input.value = "";
-        input.focus();
-      }
-    });
-    document.getElementById("guessReset").addEventListener("click", resetGuess);
-    resetGuess();
+  <section class="panel" id="scores">
+    <h2 class="section-title">🏆 Your Scoreboard</h2>
+    <div class="card">
+      <p>Earn points by playing games and answering quiz questions. Your best score is saved in this browser on this device.</p>
+      <p><strong>Total points:</strong> <span id="scoreSummary">0</span></p>
+      <p><strong>Best score:</strong> <span id="bestSummary">0</span></p>
+      <button onclick="resetScores()">Reset Scores</button>
+      <p class="small">Scores are stored locally on this device, not sent to a server.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><strong>© 2026 Zulfikar7 Info</strong></p>
+  <p>Created by Zulfikar Ali 💙</p>
+  <p class="small">Keep learning, keep exploring, and keep growing!</p>
+</footer>
 
-    // Quick quiz
-    const quizQuestions = [
-      { q: "Which language gives a web page its basic structure?", options: ["HTML", "CSS", "JavaScript"], answer: 0, info: "HTML provides the structure of a web page." },
-      { q: "Which planet is known as the Red Planet?", options: ["Earth", "Mars", "Jupiter"], answer: 1, info: "Mars is often called the Red Planet." },
-      { q: "What is 8 × 7?", options: ["54", "56", "64"], answer: 1, info: "8 multiplied by 7 equals 56." },
-      { q: "Which part styles colours and layout on a website?", options: ["CSS", "HTML", "A browser tab"], answer: 0, info: "CSS controls the visual styling of a page." },
-      { q: "How many sides does a triangle have?", options: ["Three", "Four", "Five"], answer: 0, info: "A triangle has three sides." },
-      { q: "Which one is a programming language used to add interactions to websites?", options: ["JavaScript", "Paper", "JPEG"], answer: 0, info: "JavaScript can make websites interactive." }
-    ];
-    let quizIndex = 0, quizAnswered = false;
-    function renderQuiz() {
-      const item = quizQuestions[quizIndex];
-      quizAnswered = false;
-      document.getElementById("quizQuestion").textContent = `Question ${quizIndex + 1} of ${quizQuestions.length}: ${item.q}`;
-      document.getElementById("quizStatus").textContent = "";
-      const options = document.getElementById("quizOptions");
-      options.innerHTML = "";
-      item.options.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "quiz-option";
-        button.textContent = option;
-        button.addEventListener("click", () => {
-          if (quizAnswered) return;
-          quizAnswered = true;
-          const corre
+<script>
+let totalScore = Number(localStorage.getItem('z7Total') || 0);
+let bestScore = Number(localStorage.getItem('z7Best') || 0);
+function updateScores(){
+  document.getElementById('totalScore').textContent=totalScore;
+  document.getElementById('bestScore').textContent=bestScore;
+  document.getElementById('scoreSummary').textContent=totalScore;
+  document.getElementById('bestSummary').textContent=bestScore;
+  localStorage.setItem('z7Total',totalScore);
+  localStorage.setItem('z7Best',bestScore);
+}
+function addPoints(n){totalScore+=n;if(totalScore>bestScore)bestScore=totalScore;updateScores()}
+function resetScores(){if(confirm('Reset your saved scores on this device?')){totalScore=0;bestScore=0;updateScores()}}
+updateScores();
+
+// Number guessing
+let secretNumber=Math.floor(Math.random()*10)+1;
+function guessNumber(){
+  const input=document.getElementById('guessInput'),out=document.getElementById('guessOutput');
+  const n=Number(input.value);
+  if(!input.value||n<1||n>10||!Number.isInteger(n)){out.textContent='Please enter a whole number from 1 to 10.';return}
+  if(n===secretNumber){out.textContent='🎉 Correct! +5 points. Start a new number to play again.';addPoints(5);secretNumber=0}
+  else if(secretNumber===0){out.textContent='You already got it! Press New Number.'}
+  else out.textContent=n<secretNumber?'📈 Too low! Try a bigger number.':'📉 Too high! Try a smaller number.';
+}
+function newNumber(){secretNumber=Math.floor(Math.random()*10)+1;document.getElementById('guessInput').value='';document.getElementById('guessOutput').textContent='A new number is ready!'}
+
+// Maths challenge
+let mathAnswer=0,mathDone=false;
+function startMath(){
+  const a=Math.floor(Math.random()*12)+1,b=Math.floor(Math.random()*12)+1,op=Math.random()<.5?'+':'−';
+  mathAnswer=op==='+'?a+b:a-b;mathDone=false;
+  document.getElementById('mathQuestion').textContent=`What is ${a} ${op} ${b}?`;
+  document.getElementById('mathOutput').textContent='';
+  const choices=new Set([mathAnswer]);
+  while(choices.size<4)choices.add(mathAnswer+Math.floor(Math.random()*13)-6);
+  const arr=[...choices].sort(()=>Math.random()-.5);
+  document.getElementById('mathAnswers').innerHTML='';
+  arr.forEach(v=>{const btn=document.createElement('button');btn.textContent=v;btn.onclick=()=>answerMath(v);document.getElementById('mathAnswers').appendChild(btn)});
+}
+function answerMath(v){if(mathDone)return;mathDone=true;const out=document.getElementById('mathOutput');if(v===mathAnswer){out.textContent='Correct! +3 points 🎉';addPoints(3)}else out.textContent=`Not quite! The answer was ${mathAnswer}.`}
+
+// Rock paper scissors
+function rps(player){
+ const options=['rock','paper','scissors'],computer=options[Math.floor(Math.random()*3)];
+ let msg=`You chose ${player}; computer chose ${computer}. `;
+ if(player===computer)msg+='It is a draw!';
+ else if((player==='rock'&&computer==='scissors')||(player==='paper'&&computer==='rock')||(player==='scissors'&&computer==='paper')){msg+='You win! +2 points 🎉';addPoints(2)}
+ else msg+='Computer wins. Try again!';
+ document.getElementById('rpsOutput').textContent=msg;
+}
+
+// Memory match
+const symbols=['🌟','🚀','🎈','🐼','🍀','⚽','🎵','🍎'];
+let memoryFirst=null,memoryLock=false,memoryMatches=0,memoryMoves=0;
+function startMemory(){
+ memoryFirst=null;memoryLock=false;memoryMatches=0;memoryMoves=0;
+ document.getElementById('memoryOutput').textContent='Find all 8 matching pairs.';
+ const cards=[...symbols,...symbols].sort(()=>Math.random()-.5);
+ const grid=document.getElementById('memoryGrid');grid.innerHTML='';
+ cards.forEach((symbol,i)=>{
+  const btn=document.createElement('button');btn.className='memory-card';btn.textContent='❔';btn.dataset.symbol=symbol;btn.dataset.index=i;btn.setAttribute('aria-label','Hidden card');
+  btn.onclick=()=>flipCard(btn);grid.appendChild(btn);
+ });
+}
+function flipCard(btn){
+ if(memoryLock||btn.classList.contains('matched')||btn===memoryFirst)return;
+ btn.textContent=btn.dataset.symbol;btn.setAttribute('aria-label',btn.dataset.symbol);
+ if(!memoryFirst){memoryFirst=btn;return}
+ memoryMoves++;
+ if(memoryFirst.dataset.symbol===btn.dataset.symbol){
+  memoryFirst.classList.add('matched');btn.classList.add('matched');memoryFirst.disabled=true;btn.disabled=true;memoryMatches++;
+  memoryFirst=null;
+  if(memoryMatches===symbols.length){document.getElementById('memoryOutput').textContent=`Amazing! Completed in ${memoryMoves} moves. +10 points!`;addPoints(10)}
+  else document.getElementById('memoryOutput').textContent=`Matched pairs: ${memoryMatches}/${symbols.length}`;
+ }else{
+  memoryLock=true;const first=memoryFirst;memoryFirst=null;
+  setTimeout(()=>{first.textContent='❔';btn.textContent='❔';first.setAttribute('aria-label','Hidden card');btn.setAttribute('aria-label','Hidden card');memoryLock=false},750);
+ }
+}
+
+// Quick click challenge
+let clickCount=0,clickRemaining=10,clickTimer=null,clickRunning=false;
+function startClickGame(){
+ clearInterval(clickTimer);clickCount=0;clickRemaining=10;clickRunning=true;
+ document.getElementById('clickCount').textContent=clickCount;document.getElementById('clickTime').textContent=clickRemaining;
+ document.getElementById('clickOutput').textContent='Go! Tap as quickly as you can!';
+ document.getElementById('clickTarget').disabled=false;document.getElementById('clickStart').disabled=true;
+ clickTimer=setInterval(()=>{clickRemaining--;document.getElementById('clickTime').textContent=clickRemaining;if(clickRemaining<=0){
+  clearInterval(clickTimer);clickRunning=false;document.getElementById('clickTarget').disabled=true;document.getElementById('clickStart').disabled=false;
+  const points=Math.floor(clickCount/2);if(points)addPoints(points);
+  document.getElementById('clickOutput').textContent=`Time's up! You clicked ${clickCount} times and earned ${points} points.`;
+ }},1000);
+}
+function countClick(){if(!clickRunning)return;clickCount++;document.getElementById('clickCount').textContent=clickCount}
+
+// Quiz
+const questions=[
+ {q:'What is the capital of India?',a:['Mumbai','New Delhi','Chennai','Kolkata'],correct:1},
+ {q:'Which planet is known as the Red Planet?',a:['Venus','Jupiter','Mars','Mercury'],correct:2},
+ {q:'How many days are there in a leap year?',a:['365','366','364','360'],correct:1},
+ {q:'Which is the largest ocean on Earth?',a:['Atlantic','Indian','Arctic','Pacific'],correct:3},
+ {q:'What do plants absorb from the air?',a:['Oxygen only','Carbon dioxide','Helium','Hydrogen'],correct:1}
+];
+let quizIndex=0,quizPoints=0,quizAnswered=false;
+function renderQuestion(){
+ const q=questions[quizIndex];quizAnswered=false;
+ document.getElementById('quizNumber').textContent=quizIndex+1;
+ document.getElementById('quizQuestion').textContent=q.q;
+ document.getElementById('quizScore').textContent=quizPoints;
+ document.getElementById('quizOutput').textContent='';
+ document.getElementById('nextQuiz').style.display='none';
+ const box=document.getElementById('quizOptions');box.innerHTML='';
+ q.a.forEach((answer,i)=>{const btn=document.createElement('button');btn.className='quiz-option';btn.textContent=answer;btn.onclick=()=>answerQuiz(i,btn);box.appendChild(btn)});
+}
+function answerQuiz(i,btn){
+ if(quizAnswered)return;quizAnswered=true;
+ const q=questions[quizIndex];const buttons=document.querySelectorAll('#quizOptions button');buttons.forEach(b=>b.disabled=true);
+ if(i===q.correct){quizPoints++;document.getElementById('quizOutput').textContent='Correct answer! 🌟';btn.style.background='#8ff0ca';btn.style.color='#064b37'}
+ else{document.getElementById('quizOutput').textContent=`Not quite. Correct answer: ${q.a[q.correct]}`;btn.style.background='#ffd5d5';btn.style.color='#6e1111';buttons[q.correct].style.background='#8ff0ca';buttons[q.correct].style.color='#064b37'}
+ document.getElementById('quizScore').textContent=quizPoints;
+ document.getElementById('nextQuiz').style.display='inline-block';
+ document.getElementById('nextQuiz').textContent=quizIndex===questions.length-1?'See Results 🏆':'Next Question ➜';
+}
+function nextQuestion(){
+ if(!quizAnswered)return;
+ if(quizIndex<questions.length-1){quizIndex++;renderQuestion()}
+ else{
+  addPoints(quizPoints*2);
+  document.getElementById('quizQuestion').textContent=`Quiz complete! You scored ${quizPoints} out of ${questions.length}.`;
+  document.getElementById('quizOptions').innerHTML='';
+  document.getElementById('quizOutput').textContent=`You earned ${quizPoints*2} points. Play again to improve your score!`;
+  document.getElementById('nextQuiz').style.display='none';
+ }
+}
+function restartQuiz(){quizIndex=0;quizPoints=0;renderQuestion()}
+renderQuestion();
+</script>
+</body>
+</html>
